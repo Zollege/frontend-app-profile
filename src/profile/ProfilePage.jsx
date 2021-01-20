@@ -93,17 +93,9 @@ class ProfilePage extends React.Component {
     this.props.updateDraft(name, value);
   }
 
-  // Inserted into the DOM in two places (for responsive layout)
+  // Never render the View my records button.
   renderViewMyRecordsButton() {
-    if (!this.isAuthenticatedUserProfile()) {
       return null;
-    }
-
-    return (
-      <Hyperlink className="btn btn-primary" destination={this.state.viewMyRecordsUrl} target="_blank">
-        {this.props.intl.formatMessage(messages['profile.viewMyRecords'])}
-      </Hyperlink>
-    );
   }
 
   // Inserted into the DOM in two places (for responsive layout)
